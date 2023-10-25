@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=".\styles.css" />
+    <title>Simon Says Game</title>
+  </head>
+  <body>
+    <audio id="tapOn">
+      <source id="tapOnWin" src=".\audios\tapOn.mp3" />
+      <source id="tapOnMac" src=".\audios\tapOn.ogg" />
+    </audio>
+    <audio id="tapOut">
+      <source id="tapOutWin" src=".\audios\tapOut.mp3" />
+      <source id="tapOutMac" src=".\audios\tapOut.ogg" />
+    </audio>
+    <audio id="switchON">
+      <source id="switchONWin" src=".\audios\switchON.mp3" />
+      <source id="switchONMac" src=".\audios\switchON.ogg" />
+    </audio>
+    <audio id="switchOFF">
+      <source id="switchOFFWin" src=".\audios\switchOFF.mp3" />
+      <source id="switchOFFMac" src=".\audios\switchOFF.ogg" />
+    </audio>
+    <audio id="pressed">
+      <source id="pressedWin" src=".\audios\pressed.mp3" />
+      <source id="pressedMac" src=".\audios\pressed.ogg" />
+    </audio>
+    <audio id="wheelHighlight">
+      <source id="wheelHighlightWin" src=".\audios\wheelHighlight.mp3" />
+      <source id="wheelHighlightMac" src=".\audios\wheelHighlight.ogg" />
+    </audio>
+    <audio id="wheelClick">
+      <source id="wheelClickWin" src=".\audios\wheelClick.mp3" />
+      <source id="wheelClickMac" src=".\audios\wheelClick.ogg" />
+    </audio>
+    <audio id="correctClick">
+      <source id="correctClickWin" src=".\audios\clickCorrect.mp3" />
+      <source id="correctClickMac" src=".\audios\clickCorrect.ogg" />
+    </audio>
+    <audio id="roundWin">
+      <source id="roundWinWin" src=".\audios\roundWin.mp3" />
+      <source id="roundWinMac" src=".\audios\roundWin.ogg" />
+    </audio>
+    <audio id="gameOver">
+      <source id="gameOverWin" src=".\audios\gameOver.mp3" />
+      <source id="gameOverMac" src=".\audios\gameOver.ogg" />
+    </audio>
+
+    <div class="container">
+      <div id="titleSector" class="sector">Simon Says</div>
+      <div id="tapsLeftSector" class="sector">
+        <div id="txtTapsLeft1">Taps Left:</div>
+        <div id="txtTapsLeft2">0</div>
+      </div>
+      <div id="circleSector" class="sector">
+        <div id="circleDiv1"></div>
+        <div id="circleDiv2"></div>
+        <div id="circleDiv3"></div>
+        <div id="circleDiv4"></div>
+        <div id="circleSectorUnderlayer" class="sector">
+          <div id="centerCircle"><div id="miniCircleText">0</div></div>
+        </div>
+      </div>
+      <button id="startButton">Start Game</button>
+      <div id="userInput"></div>
+      <div id="preStartScreen" onclick="startGame()">Click Screen To Begin...</div>
+    </div>
+
+    <div class="loader">
+      <div class="loader_overlay"></div>
+      <div class="loader_cogs">
+        <div class="loader_cogs__top">
+          <div class="top_part"></div>
+          <div class="top_part"></div>
+          <div class="top_part"></div>
+          <div class="top_hole"></div>
+        </div>
+        <div class="loader_cogs__left">
+          <div class="left_part"></div>
+          <div class="left_part"></div>
+          <div class="left_part"></div>
+          <div class="left_hole"></div>
+        </div>
+        <div class="loader_cogs__bottom">
+          <div class="bottom_part"></div>
+          <div class="bottom_part"></div>
+          <div class="bottom_part"></div>
+          <div class="bottom_hole"></div>
+        </div>
+      </div>
+      <div id="loadingHeaders">
+        <div id="loadingHeader1Bg">
+          <h1>Loading!</h1>
+        </div>
+        <h2>Oiling up gears and cogs...</h2>
+      </div>
+      <p>Worker hamsters hard at work</p>
+    </div>
+    <script src=".\main.js"></script>
+  </body>
+</html>
