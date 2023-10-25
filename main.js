@@ -116,6 +116,7 @@ function animate(word) {
 
   for (const index in colorObj) {
     colorObj[index].style.pointerEvents = "none";
+    colorObj[index].style.touchAction = "none";
   }
 
   containerEl.classList.add("cursorDisappear");
@@ -138,6 +139,7 @@ function animate(word) {
   setTimeout(() => {
     for (const index in colorObj) {
       colorObj[index].style.pointerEvents = "";
+      colorObj[index].style.touchAction = "";
     }
     containerEl.classList.remove("cursorDisappear");
   }, Number(`${word.length - 1 + 1}200`));
@@ -164,6 +166,8 @@ function checkInput(selectedColor, word, tapsLeft, level) {
     document.querySelector("#txtTapsLeft1").innerText = "Game Over!";
     document.querySelector("#txtTapsLeft2").innerText = `Your score is ${level - 1}.`;
     document.querySelector("#circleSector").style.pointerEvents = "none";
+    document.querySelector("#circleSector").style.touchAction = "none";
+
     buttonEl.classList.add("buttonReappear");
     buttonEl.classList.remove("buttonVanish");
     setTimeout(() => {
@@ -204,6 +208,7 @@ function play(length = 1) {
   document.querySelector("#txtTapsLeft1").innerText = "Taps Left:";
   document.querySelector("#userInput").innerText = "";
   document.querySelector("#circleSector").style.pointerEvents = "";
+  document.querySelector("#circleSector").style.touchAction = "";
 
   let currentWord = getNewWord(length);
   let tapsLeft = currentWord.length;
